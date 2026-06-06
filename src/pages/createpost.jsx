@@ -13,7 +13,7 @@ const CreatePost = () => {
         formData.append("text", text)
         if(image) formData.append("image", image)
 
-        await axios.post("http://localhost:3000/api/posts", formData, {
+        await axios.post("https://social-media-app-backend-09ei.onrender.com/api/posts", formData, {
     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
 })
         navigate("/")

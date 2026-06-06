@@ -12,7 +12,7 @@ const Feed = () => {
     const [posts, setPosts] = useState([])
 
     const fetchPosts = () => {
-        axios.get("http://localhost:3000/api/posts", getAuthHeader())
+        axios.get("https://social-media-app-backend-09ei.onrender.com/api/posts", getAuthHeader())
             .then(res => setPosts(res.data))
     }
 

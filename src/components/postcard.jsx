@@ -9,13 +9,13 @@ const PostCard = ({ post, onUpdate }) => {
     const [commentText, setCommentText] = useState("")
 
     const handleLike = async () => {
-        await axios.put(`http://localhost:3000/api/posts/${post._id}/like`, {}, getAuthHeader())
+        await axios.put(`https://social-media-app-backend-09ei.onrender.com/api/posts/${post._id}/like`, {}, getAuthHeader())
         onUpdate()
     }
 
     const handleComment = async () => {
         if (!commentText) return
-        await axios.post(`http://localhost:3000/api/posts/${post._id}/comment`, { text: commentText }, getAuthHeader())
+        await axios.post(`https://social-media-app-backend-09ei.onrender.com/api/posts/${post._id}/comment`, { text: commentText }, getAuthHeader())
         setCommentText("")
         onUpdate()
     }
@@ -30,7 +30,7 @@ const PostCard = ({ post, onUpdate }) => {
                 </div>
             </div>
             {post.text && <p className="post-text">{post.text}</p>}
-            {post.image && <img className="post-image" src={`http://localhost:3000${post.image}`} alt="post" />}
+            {post.image && <img className="post-image" src={`https://social-media-app-backend-09ei.onrender.com${post.image}`} alt="post" />}
             <div className="post-actions">
                 <button onClick={handleLike}>❤️ {post.likes.length}</button>
                 <button>💬 {post.comments.length}</button>

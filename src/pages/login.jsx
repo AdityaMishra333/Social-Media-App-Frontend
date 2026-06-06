@@ -12,7 +12,7 @@ const Login = () => {
     const handleSubmit = async(e) => {
         e.preventDefault()
 
-        const res = await axios.post("http://localhost:3000/api/auth/login", {
+        const res = await axios.post("https://social-media-app-backend-09ei.onrender.com/api/auth/login", {
             email,
             password
         },{withCredentials : true})
